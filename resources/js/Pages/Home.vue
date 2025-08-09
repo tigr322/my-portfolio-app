@@ -44,7 +44,7 @@
       </div>
     </section>
 
-    <!-- Контакты -->
+    <!-- Контакты g-->
     <section id="contact" class="max-w-4xl mx-auto py-24 px-4">
       <h3 class="text-3xl font-semibold mb-6 text-center">Контакты</h3>
       <ul class="text-gray-400 text-lg space-y-3 text-center">
