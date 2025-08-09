@@ -6,10 +6,11 @@
       <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
         FullStack-разработчик из России. Я создаю Laravel/Vue-приложения, Telegram-ботов, REST API, парсеры и админки.
       </p>
-      <div class="mt-8 space-x-4">
-        <a href="#contact" class="px-6 py-3 bg-blue-600 rounded hover:bg-blue-700 transition">Связаться</a>
-        <a href="#projects" class="px-6 py-3 border border-gray-400 rounded hover:border-white transition">Смотреть проекты</a>
-      </div>
+      <div class="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+  <a href="#contact" class="px-6 py-3 bg-blue-600 rounded hover:bg-blue-700 transition text-center">Связаться</a>
+  <a href="#projects" class="px-6 py-3 border border-gray-400 rounded hover:border-white transition text-center">Смотреть проекты</a>
+</div>
+
     </section>
 
     <!-- Проекты -->
