@@ -12,6 +12,15 @@ const props = defineProps({
 const isAdmin = computed(() => props.user?.is_admin === 1)
 const page = usePage()
 
+const selectedImage = ref(null)
+
+function openModalW(src) {
+  selectedImage.value = src
+}
+
+function closeModalW() {
+  selectedImage.value = null
+}
 console.log('isAdmin', isAdmin.value)
 
 const showModal = ref(false)
@@ -146,8 +155,29 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onEsc))
           <a v-if="p.url" :href="p.url" target="_blank" class="text-blue-400 hover:underline">
             Перейти
           </a>
-          <picture><img v-if="p.image" :src="`/storage/projects/${p.image}`" class="object-cover rounded-md" /></picture>
-          
+          <picture>
+      <img
+        v-if="p.image"
+        :src="`/storage/projects/${p.image}`"
+        class="object-cover rounded-md cursor-pointer"
+        @click="openModalW(`/storage/projects/${p.image}`)"
+      />
+    </picture>
+    <div
+      v-if="selectedImage"
+      class="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+      @click.self="closeModalW"
+    >
+      <div class="relative">
+        <button
+          class="absolute -top-8 -right-8 text-white text-3xl font-bold"
+          @click="closeModal"
+        >
+         
+        </button>
+        <img :src="selectedImage" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
+      </div>
+    </div>
 
           <div  v-if="isAdmin" class="mt-4">
    
